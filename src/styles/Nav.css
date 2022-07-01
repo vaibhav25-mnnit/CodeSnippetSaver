@@ -1,0 +1,90 @@
+.brand {
+  font-family: "Arial Black", sans-serif;
+  font-size: 2rem;
+  letter-spacing: -1px;
+  color: white;
+}
+.navbar {
+  border: 2px solid red;
+  position: sticky;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+.bread {
+  position: sticky;
+  border: 2px solid black;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  margin: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.col {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+.card:hover {
+  transform: translateY(-20px);
+}
+
+.card2 {
+  position: relative;
+  margin: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+.card2:hover {
+  transform: translateY(-20px);
+}
+
+.alert {
+  height: 50px;
+}
+
+iframe {
+  width: 75%;
+  height: 100vh;
+  margin: auto;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+small {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

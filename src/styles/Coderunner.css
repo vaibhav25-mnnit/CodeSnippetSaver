@@ -1,0 +1,10 @@
+.run {
+  border: 2px solid black;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.run:hover {
+  color: aliceblue;
+  background-color: black;
+}

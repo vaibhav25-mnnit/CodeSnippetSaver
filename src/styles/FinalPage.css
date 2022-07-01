@@ -1,0 +1,28 @@
+.edit {
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 21px;
+  color: white;
+  background-color: black;
+}
+
+.edit:hover {
+  color: black;
+  background-color: white;
+}
+
+.bread {
+  position: sticky;
+  border: 2px solid black;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  margin: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}

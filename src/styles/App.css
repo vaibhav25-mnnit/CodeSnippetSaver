@@ -1,0 +1,8 @@
+body {
+  background-color: #e6e6e6;
+  margin: 0;
+  padding: 0;
+  /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+
+  background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+}
