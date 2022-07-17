@@ -42,30 +42,27 @@ export default function Articlebutton({ name, parent, dificulty, id, parentName 
     }
     return (
         <>
-            <div className='col-lg-3 col-md-4 ' style={
+            <div className='col-lg-3 col-md-4 d-flex justify-content-center ' style={
                 {
                     'margin': "5px 0",
-                    'display': 'flex',
-                    'flexDirection': 'column',
-                    'justifyContent': 'center',
-
                 }
             }>
-                <div >
-                    <div>
-                        <Button onClick={handleDelete}>Delete</Button>
-                        <Link to={`/article/${id}/parent/${parent}/name/${parentName}`}
-                            style={{
-                                textDecoration: 'none'
-                            }}
-                        >
-                            <Button className='card2' variant={buttonColor} type="submit" size="lg" style={{ 'width': '100%' }}>
-                                <h5 className="card-title ">{name}</h5>
-                                <small>{dificulty}</small>
-                            </Button>
-                        </Link>
-                        {/* <span>delete</span> */}
-                    </div>
+                <div>
+
+                    <Link to={`/article/${id}/parent/${parent}/name/${parentName}`}
+                        style={{
+                            textDecoration: 'none'
+                        }}
+                    >
+                        <Button className='card2' variant={buttonColor} type="submit" size="lg" style={{ 'width': '100%' }}>
+                            <h5 className="card-title ">{name}</h5>
+                            <small>{dificulty}</small>
+                        </Button>
+                    </Link>
+
+                </div>
+                <div>
+                    <Button variant='outline-danger' onClick={handleDelete}>Delete</Button>
                 </div>
 
             </div >

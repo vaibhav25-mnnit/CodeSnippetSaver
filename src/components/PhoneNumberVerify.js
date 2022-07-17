@@ -44,15 +44,18 @@ export default function PhoneNumberVerify() {
             setSentOtp(false);
             return;
         } else {
+            setSentOtp(true);
             generateRecaptcha();
+
             let appVerifier = window.recaptchaVerifier;
 
             setPersistence(authentication, browserLocalPersistence)
                 .then(() => {
+                    alert('OTP sent successfully');
                     signInWithPhoneNumber(authentication, phoneNumber, appVerifier)
                         .then((confirmationResult) => {
                             window.confirmationResult = confirmationResult;
-                            setSentOtp(true);
+
                             return;
                         })
                         .catch((error) => {
@@ -105,7 +108,6 @@ export default function PhoneNumberVerify() {
                         }}
                     >
                         <Form onSubmit={handleSubmitFrom}>
-                            <Form.Label>Phone Number:</Form.Label>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <InputGroup size="lg">
                                     <InputGroup.Text id="inputGroup-sizing-lg">{prefix}</InputGroup.Text>
@@ -114,13 +116,14 @@ export default function PhoneNumberVerify() {
                                         aria-describedby="inputGroup-sizing-sm"
                                         placeholder="Enter phone number"
                                         value={phoneNumber}
+                                        autocomplete="off"
+                                        su
                                         onChange={(e) => {
                                             setphoneNumber(e.target.value)
                                         }}
                                     />
                                 </InputGroup>
                             </Form.Group>
-
 
                             <Form.Group className="mb-3" style={{
                                 display: 'flex',

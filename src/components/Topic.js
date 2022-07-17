@@ -6,7 +6,8 @@ import { Button } from 'react-bootstrap';
 
 import axios from 'axios'
 
-function Topic({ flag, setFlag, imgURL, name, code }) {
+
+function Topic({ flag, setFlag, name, code }) {
 
     const navigate = useNavigate();
 
@@ -32,12 +33,15 @@ function Topic({ flag, setFlag, imgURL, name, code }) {
             console.log(error);
         }
     }
+
+
     return (
         <div className="col">
 
             <div className="card" style={{ "width": "18rem" }} >
-                <img src={imgURL} className="card-img-top" alt="img" />
+                <img src={require(`../assets/images/img${Math.floor(Math.random() * 10) + 1}.jpg`)} className="card-img-top" alt="img" />
                 <hr />
+
                 <div className="card-body" style={{
                     'display': 'flex',
                     'flexDirection': 'column',

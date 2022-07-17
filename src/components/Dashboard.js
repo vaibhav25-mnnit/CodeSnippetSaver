@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import { Button, Form, InputGroup } from 'react-bootstrap';
 import { authentication } from '../firebase';
 
+import { Link } from 'react-router-dom';
 
 
 export default function Dashboard() {
@@ -60,47 +61,57 @@ export default function Dashboard() {
     return (
 
         <>
-            <Nav></Nav>
             {
-                !isUser ? <> Please,log in.</> : <>{loading ? <div>
-                    <div style={{
-                        justifyContent: 'center',
-                        display: 'flex',
-                    }}>
-                        <Form onSubmit={handleSubmit} style={{
-
-                        }}>
-                            <InputGroup className="mb-3" size="lg">
-                                <Form.Control
-                                    placeholder="Add new Topic"
-                                    value={topic}
-                                    onChange={(e) => {
-                                        setTopic(e.target.value);
-                                    }}
-                                    required={true}
-                                />
-                                <Button variant="primary" type='submit'>
-                                    Add
-                                </Button>
-                            </InputGroup>
-                        </Form>
-                    </div>
-                    <hr />
-                    <div className="container">
-                        <div className="row">
-                            {result.map((res) => <Topic
-                                flag={flag}
-                                setFlag={setFlag}
-                                key={res._id}
-                                imgURL={res.imgAddress}
-                                name={res.name}
-                                code={res._id}>
-                            </Topic>)
-                            }
+                !isUser ?
+                    <>
+                        <div className='d-flex justify-content-center'>
+                            <h2>Please , <Link to='/'>Log In</Link>  </h2>
                         </div>
-                    </div>
-                </div> : <Spinar />
-                }</>
+
+                    </>
+                    :
+                    <>
+                        {loading ?
+                            <div>
+
+                                <Nav></Nav>
+                                <div style={{
+                                    justifyContent: 'center',
+                                    display: 'flex',
+                                }}>
+                                    <Form onSubmit={handleSubmit} style={{
+
+                                    }}>
+                                        <InputGroup className="mb-3" size="lg">
+                                            <Form.Control
+                                                placeholder="Add new Topic"
+                                                value={topic}
+                                                onChange={(e) => {
+                                                    setTopic(e.target.value);
+                                                }}
+                                                required={true}
+                                            />
+                                            <Button variant="primary" type='submit'>
+                                                Add
+                                            </Button>
+                                        </InputGroup>
+                                    </Form>
+                                </div>
+                                <hr />
+                                <div className="container">
+                                    <div className="row">
+                                        {result.map((res) => <Topic
+                                            flag={flag}
+                                            setFlag={setFlag}
+                                            key={res._id}
+                                            name={res.name}
+                                            code={res._id}>
+                                        </Topic>)
+                                        }
+                                    </div>
+                                </div>
+                            </div> : <Spinar />
+                        }</>
             }
         </>
     )

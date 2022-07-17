@@ -1,8 +1,6 @@
 import './styles/App.css';
 import Articles from './components/Articles';
 import Home from './components/Home'
-import UploadTopic from './components/UploadTopic';
-import UploadArticle from './components/UploadArticle';
 import Dashboard from './components/Dashboard';
 import Notfound from './components/Notfound';
 
@@ -37,8 +35,6 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/topic/:topicId' element={<Articles />} />
         <Route path='/article/:articleId/parent/:parent/name/:name' element={<FinalPage />} />
-        <Route path='upload/topic' element={<UploadTopic />} />
-        <Route path='upload/article/:topicId' element={<UploadArticle />} />
         <Route path='/dashBoard/' element={<Dashboard />} />
         <Route path='*' element={<Notfound />} />
       </Routes>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Articlebutton from './Articlebutton'
 import Breadcrumb from './Breadcrumb'
 
+
 import CreateSnippet from './CreateSnippet'
 
 import axios from 'axios';
@@ -12,7 +13,18 @@ import Spinar from './Spinar';
 
 
 
+import { selectIsUser } from '../features/userSlice'
+import { useSelector } from "react-redux";
+
+
+import { Link } from 'react-router-dom';
+
+
+
 function Articles() {
+
+
+    const isUser = useSelector(selectIsUser);
 
     const { topicId } = useParams();
 
@@ -40,29 +52,42 @@ function Articles() {
 
     return (
         <>
-            {loading ?
-                <div>
-                    <Breadcrumb name={topicName} topicId={topicId} />
-                    <CreateSnippet topic={topicId} />
-                    <hr />
-                    <div className="container">
-                        <div className="row" >
-                            {articles.map((article) => <>
-                                <Articlebutton
 
-                                    key={article._id}
-                                    name={article.title}
-                                    parent={topicId}
-                                    dificulty={article.dificulty} id={article._id} parentName={topicName} />
+            {!isUser ? <>
+                <div className='d-flex justify-content-center'>
+                    <h2>Please , <Link to='/'>Log In</Link>  </h2>
+                </div>
+            </> : <>
+                {loading ?
+                    <div>
+                        <Breadcrumb name={topicName} topicId={topicId} />
+                        <CreateSnippet topic={topicId} />
+                        <hr />
+                        <div className="container">
+                            <div className="row" >
 
-                            </>
-                            )}
+
+                                {articles.map((article) => <>
+                                    <Articlebutton
+
+                                        key={article._id}
+                                        name={article.title}
+                                        parent={topicId}
+                                        dificulty={article.dificulty} id={article._id} parentName={topicName} />
+
+                                </>
+                                )}
+
+
+
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                :
-                <Spinar />
-            }
+                    :
+                    <Spinar />
+                }
+            </>}
         </>
     )
 }
