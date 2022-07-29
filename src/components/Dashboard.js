@@ -84,7 +84,7 @@ export default function Dashboard() {
                                     }}>
                                         <InputGroup className="mb-3" size="lg">
                                             <Form.Control
-                                                placeholder="Add new Topic"
+                                                placeholder="Add new Idea"
                                                 value={topic}
                                                 onChange={(e) => {
                                                     setTopic(e.target.value);
