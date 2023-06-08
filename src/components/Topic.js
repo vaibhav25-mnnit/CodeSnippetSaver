@@ -39,7 +39,7 @@ function Topic({ flag, setFlag, name, code }) {
         <div className="col">
 
             <div className="card" style={{ "width": "18rem" }} >
-                <img src={require(`../assets/images/img${Math.floor(Math.random() * 10) + 1}.jpg`)} className="card-img-top" alt="img" />
+                <img src={require('../assets/images/img.jpg')} className="card-img-top" alt="img" />
                 <hr />
 
                 <div className="card-body" style={{
@@ -60,5 +60,6 @@ function Topic({ flag, setFlag, name, code }) {
         </div >
     )
 }
+//<iframe src="" width="480" height="429" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/code-coding-seamless-xT9IgzoKnwFNmISR8I">via GIPHY</a></p>
 
 export default Topic
